@@ -11,6 +11,13 @@ upstream:
     type: alpine_apk
     repo_url: http://dl-cdn.alpinelinux.org/alpine/v3.22/main/
     package: ngircd
+  notes:
+    type: github_release
+    repo: ngircd/ngircd
+    tag: rel-${VERSION}
+    transform:
+    - regex: -r\d+$
+      replace: ''
 
 release:
   branch: master
